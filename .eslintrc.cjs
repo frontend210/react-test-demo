@@ -11,6 +11,13 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/triple-slash-reference': 'off',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+        '@typescript-eslint/no-floating-promises': 'off',
     },
     ignorePatterns: ['vite.config.ts', 'vite-env.d.ts'],
+    settings: {
+        'import/resolver': {
+            typescript: {},
+        },
+    },
 }
