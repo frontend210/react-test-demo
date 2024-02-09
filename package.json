@@ -4,12 +4,13 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --mode development --host 127.0.0.1 --debug",
         "build": "tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "prepare": "husky"
     },
+    "proxy": "https://api.nonlinearcareersdev.com/api/v1/",
     "dependencies": {
         "@mui/material": "^5.15.7",
         "@mui/styled-engine-sc": "^6.0.0-alpha.15",

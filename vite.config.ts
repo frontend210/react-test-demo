@@ -20,4 +20,14 @@ export default defineConfig({
             '@styles': resolve(root, 'styles'),
         },
     },
+    server: {
+        proxy: {
+            '/nl-api': {
+                target: 'https://api.nonlinearcareersdev.com/api/v1/',
+                changeOrigin: true,
+                secure: false,
+                rewrite: (path) => path.replace(/^\/nl-api/, ''),
+            },
+        },
+    },
 })
