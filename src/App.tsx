@@ -1,12 +1,14 @@
-import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Root } from './layouts/root.tsx'
-import { Login } from './pages/login.tsx'
+import Main from '@layouts/main.tsx'
+import Login from '@pages/login.tsx'
+import { ThemeProvider } from '@mui/material'
+import theme from '@styles/theme.ts'
+import '@styles/App.css'
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Root />,
+        element: <Main />,
         // loader: rootLoader,
         children: [
             {
@@ -17,13 +19,17 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: 'login',
+        path: 'signup',
         element: <Login />,
     },
 ])
 
 function App() {
-    return <RouterProvider router={router} />
+    return (
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    )
 }
 
 export default App

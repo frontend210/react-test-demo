@@ -1,7 +1,12 @@
-export function Login() {
+import { useLoginByEmailMutation } from '@api/authApi.ts'
+import LoginForm from '@components/LoginForm/LoginForm.tsx'
+
+export default function Login() {
+    const [loginByEmailFn] = useLoginByEmailMutation()
+
     return (
-        <div>
-            <span>Login</span>
-        </div>
+        <>
+            <LoginForm loginByEmailFn={loginByEmailFn} />
+        </>
     )
 }

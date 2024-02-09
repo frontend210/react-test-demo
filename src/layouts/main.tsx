@@ -1,9 +1,8 @@
 import { Outlet } from 'react-router-dom'
 
-export function Root() {
+export default function Main() {
     return (
-        <div className={'container'}>
-            Container
+        <div className="App">
             <Outlet />
         </div>
     )
